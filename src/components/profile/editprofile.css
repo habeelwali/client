@@ -1,0 +1,179 @@
+
+.edit_profile{
+    position: fixed;
+    margin-top:4%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #0008;
+    z-index: 9;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    
+}
+.edit_profile form{
+    max-width: 350px;
+    width: 100%;
+    height: 90%;
+    background-color: white;
+    padding:20px;
+    margin:100px auto;
+    border-radius:10px;
+    margin-bottom:100px
+}
+.edit_profile .close_btn{
+    position: absolute;
+    top: 1rem;
+    right:1rem;
+    background-color:red;
+    color:white
+
+}
+.edit_profile .image_edit{
+    width:150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius:50%;
+    position: relative;
+    margin: 15px auto;
+    border: 3px solid rgb(19, 241, 19);
+    cursor: pointer;
+
+}
+.edit_profile .image_edit img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.edit_profile .image_edit span{
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    color: orange;
+    background-color:#fff5;
+    
+}
+.edit_profile .image_edit:hover span{
+    bottom: -1%;
+}
+
+.edit_profile .image_edit #file_up{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+::-webkit-file-upload-button{
+    cursor: pointer;
+}
+.form_control{
+    width: 90%;
+   
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+/* ------------------- Follow--------------------- */
+
+.follow{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background:#0008;
+    width: 100%;
+    height: 100vh;
+    z-index: 4;
+}
+
+.follow_box{
+    width: 350px;
+    height: 400px;
+    border:1px solid #222;
+    border-radius:5px;
+    background:white;
+    padding: 20px 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow:auto;
+}
+
+.follow_box .close{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size:2rem;
+    font-weight:bolder;
+    cursor: pointer;
+}
+.text-center{
+    text-align: center;
+    font-size:1rem;
+    font-weight:bolder;
+}
+
+/* --------------------postthumb--------------------- */
+
+.post-thumb{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    justify-content:center;
+    grid-gap: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+.post-thumb_display{
+    min-width: 300px;
+    height:300px;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+.post-thumb_display img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+
+}
+.post-thumb_menu img{
+    width:50px;
+    height:50px;
+    border-radius:20px;
+    object-fit: cover;
+    background-image: none;
+}
+.post-thumb_display .post-thumb_menu{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background:#0008;
+   display:flex;
+   justify-content: center;
+   align-items:center;
+   opacity: 0;
+   transition:0.3s;
+}
+.post-thumb_display:hover .post-thumb_menu{
+    opacity: 1;
+}
+.comment_icon{
+    font-size:10%;
+    color:white;
+    margin: 0 25px;
+}

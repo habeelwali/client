@@ -1,0 +1,73 @@
+.info{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px 10px
+}
+.Info_container{
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+}
+.Info_content{
+min-width: 250;
+max-width: 400px;
+width: 100%;
+flex: 1;
+opacity: 0.7;
+margin: 0 15px;
+
+}
+.Info_content_title{
+    display: flex;
+    align-items:center;
+    flex-wrap: wrap;
+}
+.Info_content_title h2{
+    font-size:2rem;
+    font-weight:400;
+    transform: translateY(4px);
+    flex:3;
+
+}
+.edit_btn{
+    width: 10%;
+    flex: 2;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color:none;
+    color: teal;
+   
+}
+.edit_btn:hover{
+    background-color: gray;
+    cursor: pointer;
+    color:white;
+}
+
+.Avatar{
+    margin-top: 4%;
+    max-width:20%;
+    max-height:20%;
+    width:20%;
+    height: 20%;
+    border-radius:50%;
+    object-fit: cover
+    
+    
+    
+}
+.follow_btn{
+       color: teal;
+       cursor: pointer;
+}
+.follow_btn span:hover{
+    text-decoration:underline
+}
+.followr_span{
+    margin-right: 6px;
+}
+.following_span{
+    margin-left: 6px;
+}
+

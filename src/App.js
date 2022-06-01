@@ -1,23 +1,56 @@
-import logo from './logo.svg';
+import {useEffect} from 'react'
 import './App.css';
-
+import NotFound from './components/NotFound'
+import Register from './pages/Register';
+import Home from './pages/Home';
+import Login from './pages/Login.js';
+import {BrowserRouter as Router,Routes, Route} from 'react-router-dom'
+import Alert from './components/alert/Alert'
+import {useSelector, useDispatch} from 'react-redux'
+import {refreshToken} from './redux/actions/authAction'
+import Header from './components/header/Header'
+import Profile from './components/profile/Profile'
+import Post from './pages/post/Post'
+import FullData from './components/FullData'
+import {getPosts} from './redux/actions/postAction'
+import {getSuggestions} from './redux/actions/suggestionAction'
 function App() {
+  const { auth } = useSelector(state => state)
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+dispatch(refreshToken())
+  },[dispatch])
+
+  useEffect(()=>{
+    if(auth.token) {
+      dispatch(getPosts(auth.token))
+      dispatch(getSuggestions(auth.token))
+    }
+    
+      },[dispatch,auth.token])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <Router>
+        {auth.token && <Header/> } 
+        
+        <Alert/>
+        <Routes>
+          
+           
+            <Route exect path="/" element={auth.token ? <Home /> :<Login/>} />
+            <Route exect path="/:profile/:id" element={auth.token ?<Profile/>:<Login/>}/>
+            <Route exect path="/:post/:id" element={auth.token ?<FullData/>:<Login/>}/>
+        
+        
+        <Route path="/register" element={<Register />} />
+        
+          
+      
+        </Routes>
+      </Router>
     </div>
   );
 }
